@@ -1,0 +1,210 @@
+/* 利用規約ページCSS */
+
+.terms-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.terms-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.terms-header h2 {
+    color: #355c7d;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.terms-date {
+    color: #999;
+    font-size: 14px;
+}
+
+/* 最終更新日 */
+.last-updated {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* 利用規約コンテンツ */
+.terms-content {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    line-height: 1.8;
+}
+
+.terms-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.terms-section:last-of-type {
+    border-bottom: none;
+}
+
+.terms-section h3 {
+    color: #4aa3d8;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.terms-section h4 {
+    color: #355c7d;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+}
+
+.terms-section p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.terms-section ol {
+    margin: 10px 0 10px 20px;
+    color: #666;
+}
+
+.terms-section ol li {
+    margin-bottom: 10px;
+}
+
+.terms-section ul {
+    margin: 10px 0 10px 20px;
+    color: #666;
+}
+
+.terms-section ul li {
+    margin-bottom: 8px;
+    list-style-type: disc;
+}
+
+/* ネストされたリスト */
+.terms-section ol ul {
+    margin-top: 10px;
+}
+
+.terms-section ol ul li {
+    list-style-type: circle;
+}
+
+/* ハイライト */
+.highlight {
+    background: #fff3cd;
+    padding: 15px;
+    border-left: 4px solid #ffc107;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+.highlight p {
+    color: #856404;
+    margin: 0;
+}
+
+/* フッター */
+.terms-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #e0e0e0;
+    text-align: center;
+}
+
+.terms-footer p {
+    color: #999;
+    font-size: 13px;
+}
+
+/* 同意ボックス */
+.accept-box {
+    background: #e8f4f8;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.accept-box p {
+    color: #355c7d;
+    margin-bottom: 15px;
+}
+
+/* ボタン */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #4aa3d8 0%, #7dd3fc 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(74, 163, 216, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 14px;
+    background: white;
+    color: #4aa3d8;
+    border: 2px solid #4aa3d8;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.btn-secondary:hover {
+    background: #e8f4f8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(74, 163, 216, 0.2);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+/* カード間のスペース */
+.card {
+    margin-bottom: 25px;
+}
+
+.card + .card {
+    margin-top: 20px;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .terms-content {
+        padding: 20px;
+    }
+    
+    .terms-section h3 {
+        font-size: 18px;
+    }
+    
+    .terms-section h4 {
+        font-size: 15px;
+    }
+}

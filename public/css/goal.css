@@ -1,0 +1,259 @@
+.goal-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.goal-container .wide {
+    grid-column: 1 / -1;
+}
+
+/* カード間の余白 */
+.card {
+    margin-bottom: 25px;
+}
+
+#currentGoalCard {
+    margin-bottom: 25px;
+}
+
+/* フォームグループ */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4aa3d8;
+    box-shadow: 0 0 0 3px rgba(74, 163, 216, 0.1);
+}
+
+/* ボタンスタイル */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #4aa3d8 0%, #7dd3fc 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(74, 163, 216, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.current-goal-display {
+    padding: 20px;
+    background: linear-gradient(135deg, #4aa3d8 0%, #7dd3fc 100%);
+    border-radius: 12px;
+    color: white;
+}
+
+.current-goal-display h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.goal-target {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.goal-period {
+    font-size: 14px;
+    opacity: 0.9;
+    margin: 10px 0;
+}
+
+.progress-section {
+    margin-top: 20px;
+}
+
+.progress-bar-container {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    height: 30px;
+    overflow: visible;
+    margin: 10px 0;
+    position: relative;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: white;
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+.progress-bar-container::after {
+    content: attr(data-progress);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+
+.goal-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.goal-stat-item {
+    text-align: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.goal-stat-label {
+    font-size: 13px;
+    opacity: 0.95;
+    margin-bottom: 8px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.goal-stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.goal-info-box {
+    background: #e0f7fa;
+    border-left: 4px solid #4aa3d8;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+.goal-info-box p {
+    color: #666;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.past-goals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.past-goal-item {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #ccc;
+}
+
+.past-goal-item.achieved {
+    border-left-color: #27ae60;
+    background: #d5f4e6;
+}
+
+.past-goal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.past-goal-target {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.past-goal-status {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.past-goal-status.achieved {
+    background: #27ae60;
+    color: white;
+}
+
+.past-goal-status.not-achieved {
+    background: #999;
+    color: white;
+}
+
+.past-goal-period {
+    color: #666;
+    font-size: 14px;
+}
+
+/* 読み取り専用フィールドのスタイル */
+input[readonly] {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+input[readonly]:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.input-note {
+    display: block;
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .goal-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .goal-stats {
+        grid-template-columns: 1fr;
+    }
+}

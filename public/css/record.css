@@ -1,0 +1,144 @@
+.record-form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* カード間の余白 */
+.card {
+    margin-bottom: 25px;
+}
+
+/* フォームグループ */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* 入力欄の共通スタイル */
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4aa3d8;
+    box-shadow: 0 0 0 3px rgba(74, 163, 216, 0.1);
+}
+
+/* 必須マーク */
+.required {
+    color: #e74c3c;
+    margin-left: 4px;
+}
+
+/* ボタンスタイル */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #4aa3d8 0%, #7dd3fc 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(74, 163, 216, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    resize: vertical;
+    transition: border-color 0.3s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #4aa3d8;
+}
+
+.success-message {
+    color: #27ae60;
+    background: #d5f4e6;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 15px;
+    display: none;
+}
+
+.success-message.show {
+    display: block;
+}
+
+/* 記録リスト */
+#recentRecordsList {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.record-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.record-item:last-child {
+    border-bottom: none;
+}
+
+.record-date {
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.record-weight {
+    color: #4aa3d8;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.record-fat {
+    color: #999;
+    font-size: 14px;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .record-form-container {
+        grid-template-columns: 1fr;
+    }
+}

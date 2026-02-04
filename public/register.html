@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規登録 - WeightTrack</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+    <div class="container">
+        <div class="auth-box">
+            <h1>WeightTrack</h1>
+            <h2>新規登録</h2>
+
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="name">お名前</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">パスワード</label>
+                    <input type="password" id="password" name="password" required minlength="6">
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">性別</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">選択してください</option>
+                        <option value="male">男性</option>
+                        <option value="female">女性</option>
+                        <option value="other">その他</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="birthDate">生年月日</label>
+                    <input type="date" id="birthDate" name="birthDate" required>
+                </div>
+
+                <button type="submit" class="btn-primary">登録</button>
+
+                <div id="error-message" class="error-message"></div>
+            </form>
+
+            <p class="link-text">
+                すでにアカウントをお持ちの方は
+                <a href="login.html">ログイン</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script> 
+    <script src="js/auth.js"></script> 
+</body>
+</body>
+
+</html>

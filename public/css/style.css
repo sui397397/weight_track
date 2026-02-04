@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Rounded Mplus 1c", -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #4aa3d8 0%, #7dd3fc 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+.auth-box {
+    background: transparent;
+    border-radius: 0;
+    padding: 40px;
+    box-shadow: none;
+}
+
+h1 {
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+h2 {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0f2f7;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    font-family: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Rounded Mplus 1c", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #4aa3d8;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: #2c7da0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+    font-family: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Rounded Mplus 1c", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.btn-primary:hover {
+    background: #236890;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 15px;
+    padding: 10px;
+    background: #ffeaea;
+    border-radius: 6px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.link-text {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    font-size: 14px;
+}
+
+.link-text a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid white;
+}
+
+.link-text a:hover {
+    border-bottom: 2px solid white;
+}
+
+/* ログイン画面のリンクエリア */
+.auth-links {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.auth-links .link-text {
+    margin: 12px 0;
+    color: white;
+    font-size: 14px;
+}
+
+.auth-links .link-text a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    transition: all 0.3s;
+    padding-bottom: 2px;
+}
+
+.auth-links .link-text a:hover {
+    border-bottom: 2px solid white;
+    padding-bottom: 3px;
+}
+
+/* パスワード忘れたリンクを少し小さく */
+.auth-links .link-text:last-child {
+    font-size: 13px;
+    margin-top: 15px;
+    opacity: 0.9;
+}
+
+.auth-links .link-text:last-child a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.auth-links .link-text:last-child a:hover {
+    opacity: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+/* パスワードリセット画面用の追加スタイル */
+
+/* パスワード強度表示 */
+.password-strength {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* 成功メッセージ */
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #c3e6cb;
+    display: none;
+}
+
+/* auth-body用の背景 */
+.auth-body {
+    background: linear-gradient(135deg, #4aa3d8 0%, #7dd3fc 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* インフォセクション */
+.auth-info {
+    margin-top: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.info-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: white;
+}
+
+.info-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-content h4 {
+    color: #355c7d;
+    font-size: 16px;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.info-content p {
+    color: #6b9fb5;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* セカンダリボタン（再申請用） */
+.btn-secondary {
+    display: inline-block;
+    padding: 12px 30px;
+    background: white;
+    color: #4aa3d8;
+    border: 2px solid #4aa3d8;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #4aa3d8;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 163, 216, 0.3);
+}
+
+/* auth-subtitle */
+.auth-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .info-item {
+        padding: 15px;
+    }
+    
+    .info-icon {
+        font-size: 28px;
+    }
+    
+    .info-content h4 {
+        font-size: 15px;
+    }
+    
+    .info-content p {
+        font-size: 13px;
+    }
+}

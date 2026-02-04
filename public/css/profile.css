@@ -1,0 +1,198 @@
+/* プロフィールページCSS */
+
+/* プロフィールヘッダー */
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4aa3d8 0%, #7dd3fc 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 48px;
+    color: white;
+}
+
+.profile-name {
+    color: #355c7d;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.profile-email {
+    color: #666;
+    font-size: 14px;
+}
+
+.profile-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.stat-value {
+    color: #4aa3d8;
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 12px;
+}
+
+/* フォームグループ */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #355c7d;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #4aa3d8;
+    box-shadow: 0 0 0 3px rgba(74, 163, 216, 0.1);
+}
+
+.form-group input:disabled {
+    background: #f5f7fa;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.form-hint {
+    display: block;
+    color: #999;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* エラー・成功メッセージ */
+.error-message,
+.success-message {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: none;
+}
+
+.error-message {
+    background: #fee;
+    color: #c33;
+    border: 1px solid #fcc;
+}
+
+.success-message {
+    background: #efe;
+    color: #3c3;
+    border: 1px solid #cfc;
+}
+
+.error-message.show,
+.success-message.show {
+    display: block;
+}
+
+/* ボタン */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #4aa3d8 0%, #7dd3fc 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(74, 163, 216, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 14px;
+    background: white;
+    color: #4aa3d8;
+    border: 2px solid #4aa3d8;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.btn-secondary:hover {
+    background: #e8f4f8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(74, 163, 216, 0.2);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+/* カード間のスペース */
+.card {
+    margin-bottom: 25px;
+}
+
+.card + .card {
+    margin-top: 20px;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .profile-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-group input,
+    .form-group select {
+        font-size: 16px; /* iOSのズーム防止 */
+    }
+}

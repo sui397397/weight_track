@@ -1,0 +1,209 @@
+/* カード間の余白 */
+.card {
+    margin-bottom: 25px;
+}
+
+/* フォームグループ */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: calc(100% - 24px);
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4aa3d8;
+    box-shadow: 0 0 0 3px rgba(74, 163, 216, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* フォーム行（2列並び） */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* エラー・成功メッセージ */
+.error-message,
+.success-message {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: none;
+}
+
+.error-message {
+    background: #fee;
+    color: #c33;
+    border: 1px solid #fcc;
+}
+
+.success-message {
+    background: #efe;
+    color: #3c3;
+    border: 1px solid #cfc;
+}
+
+.error-message.show,
+.success-message.show {
+    display: block;
+}
+
+/* 運動記録アイテム */
+.exercise-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 4px solid #28a745;
+}
+
+.exercise-item:last-child {
+    margin-bottom: 0;
+}
+
+.exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.exercise-type {
+    font-weight: 600;
+    color: #28a745;
+    font-size: 14px;
+}
+
+.exercise-time {
+    color: #999;
+    font-size: 13px;
+}
+
+.exercise-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.exercise-details {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: #666;
+}
+
+.exercise-details span {
+    background: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.exercise-memo {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #666;
+    font-style: italic;
+}
+
+.exercise-delete {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.exercise-delete:hover {
+    background: #c0392b;
+}
+
+/* 今日の合計 */
+.summary-box {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 15px;
+    display: none;
+}
+
+.summary-box.show {
+    display: block;
+}
+
+.summary-box h4 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.summary-item {
+    text-align: center;
+}
+
+.summary-label {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.summary-value {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .summary-value {
+        font-size: 20px;
+    }
+
+    .exercise-details {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用規約 - WeightTrack</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/terms.css">
+    <link rel="manifest" href="/manifest.json">
+    <script src="js/lang/ja.js"></script>
+    <script src="js/lang/en.js"></script>
+    <script src="js/lang/zh.js"></script>
+    <script src="js/lang/ko.js"></script>
+    <script src="js/i18n.js"></script>
+</head>
+<body class="home-body">
+    <!-- ナビゲーションバー -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">WeightTrack</h1>
+            
+            <!-- ハンバーガーメニューボタン -->
+            <button class="hamburger-btn" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ハンバーガーメニュー -->
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="hamburger-overlay" id="hamburgerOverlay"></div>
+        <div class="hamburger-content">
+            <div class="hamburger-header">
+                <h3 data-i18n="nav.menu">メニュー</h3>
+                <button class="hamburger-close" id="hamburgerClose">✕</button>
+            </div>
+            <nav class="hamburger-nav">
+                <a href="home.html" class="hamburger-item">
+                    <span class="hamburger-icon">🏠</span>
+                    <span data-i18n="nav.home">ホーム</span>
+                </a>
+                <a href="record.html" class="hamburger-item">
+                    <span class="hamburger-icon">📝</span>
+                    <span data-i18n="nav.record">体重記録</span>
+                </a>
+                <a href="meal.html" class="hamburger-item">
+                    <span class="hamburger-icon">🍽️</span>
+                    <span data-i18n="nav.meal">食事記録</span>
+                </a>
+                <a href="exercise.html" class="hamburger-item">
+                    <span class="hamburger-icon">🏃</span>
+                    <span data-i18n="nav.exercise">運動記録</span>
+                </a>
+                <a href="health-memo.html" class="hamburger-item">
+                    <span class="hamburger-icon">💭</span>
+                    <span data-i18n="nav.healthMemo">体調メモ</span>
+                </a>
+                <a href="calendar.html" class="hamburger-item">
+                    <span class="hamburger-icon">📅</span>
+                    <span data-i18n="nav.calendar">カレンダー</span>
+                </a>
+                <a href="graph.html" class="hamburger-item">
+                    <span class="hamburger-icon">📊</span>
+                    <span data-i18n="nav.graph">グラフ</span>
+                </a>
+                <a href="goal.html" class="hamburger-item">
+                    <span class="hamburger-icon">🎯</span>
+                    <span data-i18n="nav.goal">目標設定</span>
+                </a>
+                <a href="game.html" class="hamburger-item">
+                    <span class="hamburger-icon">🐣</span>
+                    <span>アバター育成</span>
+                </a>
+                <a href="ai.html" class="hamburger-item">
+                    <span class="hamburger-icon">🤖</span>
+                    <span data-i18n="nav.ai">AI相談</span>
+                </a>
+                
+                <div class="hamburger-divider"></div>
+                
+                <a href="profile.html" class="hamburger-item">
+                    <span class="hamburger-icon">👤</span>
+                    <span data-i18n="nav.profile">プロフィール</span>
+                </a>
+                <a href="settings.html" class="hamburger-item">
+                    <span class="hamburger-icon">⚙️</span>
+                    <span data-i18n="nav.settings">設定</span>
+                </a>
+                <a href="help.html" class="hamburger-item">
+                    <span class="hamburger-icon">❓</span>
+                    <span data-i18n="nav.help">ヘルプ</span>
+                </a>
+                <a href="terms.html" class="hamburger-item">
+                    <span class="hamburger-icon">📄</span>
+                    <span data-i18n="nav.terms">利用規約</span>
+                </a>
+                <a href="language.html" class="hamburger-item">
+                    <span class="hamburger-icon">🌐</span>
+                    <span data-i18n="nav.language">言語変更</span>
+                </a>
+                
+                <div class="hamburger-divider"></div>
+                
+                <a href="#" class="hamburger-item" id="hamburgerLogout">
+                    <span class="hamburger-icon">🚪</span>
+                    <span data-i18n="nav.logout">ログアウト</span>
+                </a>
+                <a href="delete-account.html" class="hamburger-item danger">
+                    <span class="hamburger-icon">🗑️</span>
+                    <span data-i18n="nav.deleteAccount">アカウント削除</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="home-container">
+        <h2 data-i18n="terms.title">利用規約</h2>
+        <p class="last-updated"><span data-i18n="terms.lastUpdated">最終更新日</span>: 2025年12月2日</p>
+
+        <div class="card terms-content">
+            <section class="terms-section">
+                <h3>第1条（適用）</h3>
+                <p>本規約は、WeightTrack（以下「本サービス」といいます）の利用に関する条件を、本サービスを利用するすべてのユーザー（以下「ユーザー」といいます）と本サービス提供者との間で定めるものです。</p>
+                <p>ユーザーは、本規約に同意した上で、本サービスを利用するものとします。</p>
+            </section>
+
+            <section class="terms-section">
+                <h3>第2条（利用登録）</h3>
+                <ol>
+                    <li>本サービスの利用を希望する者は、本規約に同意の上、所定の方法により利用登録を申請するものとします。</li>
+                    <li>利用登録の申請者が以下のいずれかに該当する場合、当方は利用登録を承認しないことがあります。
+                        <ul>
+                            <li>虚偽の情報を登録した場合</li>
+                            <li>過去に本規約違反により登録を抹消されたことがある場合</li>
+                            <li>その他、当方が不適切と判断した場合</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="terms-section">
+                <h3>第3条（アカウント管理）</h3>
+                <ol>
+                    <li>ユーザーは、自己の責任において、本サービスのアカウント情報を管理するものとします。</li>
+                    <li>ユーザーは、いかなる場合にも、アカウント情報を第三者に譲渡または貸与することはできません。</li>
+                    <li>アカウント情報の管理不十分により生じた損害について、当方は一切の責任を負いません。</li>
+                </ol>
+            </section>
+
+            <section class="terms-section">
+                <h3>第4条（禁止事項）</h3>
+                <p>ユーザーは、本サービスの利用にあたり、以下の行為をしてはなりません。</p>
+                <ul>
+                    <li>法令または公序良俗に違反する行為</li>
+                    <li>犯罪行為に関連する行為</li>
+                    <li>本サービスの運営を妨害する行為</li>
+                    <li>他のユーザーまたは第三者の権利を侵害する行為</li>
+                    <li>虚偽の情報を登録する行為</li>
+                    <li>本サービスのネットワークまたはシステム等に過度な負荷をかける行為</li>
+                    <li>不正アクセスをし、またはこれを試みる行為</li>
+                    <li>その他、当方が不適切と判断する行為</li>
+                </ul>
+            </section>
+
+            <section class="terms-section">
+                <h3>第5条（本サービスの提供の停止等）</h3>
+                <p>当方は、以下のいずれかの事由があると判断した場合、ユーザーに事前に通知することなく本サービスの全部または一部の提供を停止または中断することができるものとします。</p>
+                <ul>
+                    <li>本サービスにかかるシステムの保守点検または更新を行う場合</li>
+                    <li>地震、落雷、火災、停電または天災などの不可抗力により、本サービスの提供が困難となった場合</li>
+                    <li>その他、当方が本サービスの提供が困難と判断した場合</li>
+                </ul>
+            </section>
+
+            <section class="terms-section">
+                <h3>第6条（利用制限および登録抹消）</h3>
+                <p>ユーザーが以下のいずれかに該当する場合、当方は事前の通知なく、ユーザーに対して、本サービスの全部もしくは一部の利用を制限し、またはユーザーとしての登録を抹消することができるものとします。</p>
+                <ul>
+                    <li>本規約のいずれかの条項に違反した場合</li>
+                    <li>登録事項に虚偽の事実があることが判明した場合</li>
+                    <li>その他、当方が本サービスの利用を適当でないと判断した場合</li>
+                </ul>
+            </section>
+
+            <section class="terms-section">
+                <h3>第7条（保証の否認および免責事項）</h3>
+                <ol>
+                    <li>当方は、本サービスに事実上または法律上の瑕疵がないことを明示的にも黙示的にも保証しておりません。</li>
+                    <li>当方は、本サービスに起因してユーザーに生じたあらゆる損害について、一切の責任を負いません。</li>
+                    <li>本サービスは健康管理の補助を目的としており、医療行為ではありません。健康上の問題については、必ず医師にご相談ください。</li>
+                </ol>
+            </section>
+
+            <section class="terms-section">
+                <h3>第8条（サービス内容の変更等）</h3>
+                <p>当方は、ユーザーへの事前の告知をもって、本サービスの内容を変更、追加または廃止することがあり、ユーザーはこれを承諾するものとします。</p>
+            </section>
+
+            <section class="terms-section">
+                <h3>第9条（利用規約の変更）</h3>
+                <p>当方は、必要と判断した場合には、ユーザーに通知することなくいつでも本規約を変更することができるものとします。変更後の本規約は、本サービス上に掲載した時点から効力を生じるものとします。</p>
+            </section>
+
+            <section class="terms-section">
+                <h3>第10条（個人情報の取扱い）</h3>
+                <p>当方は、本サービスの利用によって取得する個人情報については、当方のプライバシーポリシーに従い適切に取り扱うものとします。</p>
+            </section>
+
+            <section class="terms-section">
+                <h3>第11条（準拠法・裁判管轄）</h3>
+                <ol>
+                    <li>本規約の解釈にあたっては、日本法を準拠法とします。</li>
+                    <li>本サービスに関して紛争が生じた場合には、当方の所在地を管轄する裁判所を専属的合意管轄とします。</li>
+                </ol>
+            </section>
+
+            <p class="terms-footer">以上</p>
+        </div>
+
+        <div class="card">
+            <button class="btn-primary" onclick="location.href='home.html'" data-i18n="common.backToHome">ホームに戻る</button>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/terms.js"></script>
+</body>
+</html>

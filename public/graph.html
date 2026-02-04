@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グラフ・データ分析 - WeightTrack</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/graph.css">
+    <link rel="manifest" href="/manifest.json">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body class="home-body">
+    <!-- ナビゲーションバー -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">WeightTrack</h1>
+            <button class="hamburger-btn" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ハンバーガーメニュー -->
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="hamburger-overlay" id="hamburgerOverlay"></div>
+        <div class="hamburger-content">
+            <div class="hamburger-header">
+                <h3>メニュー</h3>
+                <button class="hamburger-close" id="hamburgerClose">✕</button>
+            </div>
+            <nav class="hamburger-nav">
+                <a href="home.html" class="hamburger-item">
+                    <span class="hamburger-icon">🏠</span>
+                    <span>ホーム</span>
+                </a>
+                <a href="record.html" class="hamburger-item">
+                    <span class="hamburger-icon">📝</span>
+                    <span>体重記録</span>
+                </a>
+                <a href="meal.html" class="hamburger-item">
+                    <span class="hamburger-icon">🍽️</span>
+                    <span>食事記録</span>
+                </a>
+                <a href="exercise.html" class="hamburger-item">
+                    <span class="hamburger-icon">🏃</span>
+                    <span>運動記録</span>
+                </a>
+                <a href="calendar.html" class="hamburger-item">
+                    <span class="hamburger-icon">📅</span>
+                    <span>カレンダー</span>
+                </a>
+                <a href="graph.html" class="hamburger-item">
+                    <span class="hamburger-icon">📊</span>
+                    <span>グラフ・分析</span>
+                </a>
+                <a href="goal.html" class="hamburger-item">
+                    <span class="hamburger-icon">🎯</span>
+                    <span>目標設定</span>
+                </a>
+                <a href="game.html" class="hamburger-item">
+                    <span class="hamburger-icon">🐣</span>
+                    <span>アバター育成</span>
+                </a>
+                <a href="ai.html" class="hamburger-item">
+                    <span class="hamburger-icon">🤖</span>
+                    <span>AI相談</span>
+                </a>
+                
+                <div class="hamburger-divider"></div>
+                
+                <a href="profile.html" class="hamburger-item">
+                    <span class="hamburger-icon">👤</span>
+                    <span>プロフィール</span>
+                </a>
+                <a href="settings.html" class="hamburger-item">
+                    <span class="hamburger-icon">⚙️</span>
+                    <span>設定</span>
+                </a>
+                <a href="help.html" class="hamburger-item">
+                    <span class="hamburger-icon">❓</span>
+                    <span>ヘルプ</span>
+                </a>
+                <a href="terms.html" class="hamburger-item">
+                    <span class="hamburger-icon">📄</span>
+                    <span>利用規約</span>
+                </a>
+                <a href="language.html" class="hamburger-item">
+                    <span class="hamburger-icon">🌐</span>
+                    <span>言語変更</span>
+                </a>
+                
+                <div class="hamburger-divider"></div>
+                
+                <a href="#" class="hamburger-item" id="hamburgerLogout">
+                    <span class="hamburger-icon">🚪</span>
+                    <span>ログアウト</span>
+                </a>
+                <a href="delete-account.html" class="hamburger-item danger">
+                    <span class="hamburger-icon">🗑️</span>
+                    <span>アカウント削除</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="home-container">
+        <div class="welcome-section">
+            <h2>📊 グラフ・データ分析</h2>
+        </div>
+
+        <!-- タブナビゲーション -->
+        <div class="bi-tabs">
+            <button class="bi-tab active" data-tab="graph">
+                <span class="tab-icon">📈</span>
+                <span>グラフ</span>
+            </button>
+            <button class="bi-tab" data-tab="search">
+                <span class="tab-icon">🔍</span>
+                <span>検索</span>
+            </button>
+            <button class="bi-tab" data-tab="stats">
+                <span class="tab-icon">📊</span>
+                <span>統計</span>
+            </button>
+        </div>
+
+        <!-- グラフタブ -->
+        <div class="bi-content active" id="graph-tab">
+            <!-- 期間選択 -->
+            <div class="card">
+                <h3>期間選択</h3>
+                <div class="period-selector">
+                    <button class="period-btn active" data-period="week">1週間</button>
+                    <button class="period-btn" data-period="month">1ヶ月</button>
+                    <button class="period-btn" data-period="3months">3ヶ月</button>
+                    <button class="period-btn" data-period="6months">6ヶ月</button>
+                    <button class="period-btn" data-period="year">1年</button>
+                    <button class="period-btn" data-period="all">全期間</button>
+                </div>
+            </div>
+
+            <!-- 体重推移グラフ -->
+            <div class="card">
+                <h3>体重推移グラフ</h3>
+                <div class="chart-container">
+                    <canvas id="weightChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- 検索タブ -->
+        <div class="bi-content" id="search-tab">
+            <div class="card">
+                <h3>🔍 詳細検索</h3>
+                <form id="searchForm" class="search-form">
+                    <div class="search-row">
+                        <div class="search-field">
+                            <label>体重範囲（kg）</label>
+                            <div class="range-input">
+                                <input type="number" id="weightMin" placeholder="最小" step="0.1">
+                                <span>〜</span>
+                                <input type="number" id="weightMax" placeholder="最大" step="0.1">
+                            </div>
+                        </div>
+                        
+                        <div class="search-field">
+                            <label>体脂肪率（%）</label>
+                            <div class="range-input">
+                                <input type="number" id="fatMin" placeholder="最小" step="0.1">
+                                <span>〜</span>
+                                <input type="number" id="fatMax" placeholder="最大" step="0.1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search-row">
+                        <div class="search-field">
+                            <label>日付範囲</label>
+                            <div class="range-input">
+                                <input type="date" id="dateMin">
+                                <span>〜</span>
+                                <input type="date" id="dateMax">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search-buttons">
+                        <button type="submit" class="btn-primary">🔍 検索</button>
+                        <button type="button" id="resetSearch" class="btn-secondary">🔄 リセット</button>
+                        <button type="button" id="exportCSV" class="btn-secondary" style="display:none;">📥 CSV出力</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 検索結果 -->
+            <div class="card" id="searchResults" style="display:none;">
+                <h3>📋 検索結果 (<span id="resultCount">0</span>件)</h3>
+                <div class="search-results-table">
+                    <table id="resultsTable">
+                        <thead>
+                            <tr>
+                                <th>日付</th>
+                                <th>体重</th>
+                                <th>体脂肪率</th>
+                                <th>メモ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 統計タブ -->
+        <div class="bi-content" id="stats-tab">
+            <!-- ダッシュボードカード -->
+            <div class="dashboard-cards">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-info">
+                        <div class="stat-label">平均体重</div>
+                        <div class="stat-value" id="statAvg">--</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-info">
+                        <div class="stat-label">最高体重</div>
+                        <div class="stat-value" id="statMax">--</div>
+                        <div class="stat-date" id="statMaxDate"></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📉</div>
+                    <div class="stat-info">
+                        <div class="stat-label">最低体重</div>
+                        <div class="stat-value" id="statMin">--</div>
+                        <div class="stat-date" id="statMinDate"></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-info">
+                        <div class="stat-label">体重変化</div>
+                        <div class="stat-value" id="statChange">--</div>
+                        <div class="stat-date" id="statChangePercent"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- データインサイト -->
+            <div class="card insights-card">
+                <h3>💡 データインサイト</h3>
+                <div id="insightsContent" class="insights-content">
+                    <p class="loading-text">データを分析中...</p>
+                </div>
+            </div>
+
+            <!-- 週別統計 -->
+            <div class="card">
+                <h3>📅 週別統計</h3>
+                <div id="weeklyStatsContent" class="weekly-stats">
+                    <p class="loading-text">読み込み中...</p>
+                </div>
+            </div>
+
+            <!-- 月別統計 -->
+            <div class="card">
+                <h3>📆 月別統計</h3>
+                <div id="monthlyStatsContent" class="monthly-stats">
+                    <p class="loading-text">読み込み中...</p>
+                </div>
+            </div>
+
+            <!-- 記録統計 -->
+            <div class="card">
+                <h3>📝 記録統計</h3>
+                <div id="recordStatsContent" class="record-stats">
+                    <p class="loading-text">読み込み中...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/graph.js"></script>
+</body>
+</html>

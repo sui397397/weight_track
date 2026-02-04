@@ -1,0 +1,407 @@
+/* フォームスタイル */
+.form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #212529;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus {
+    outline: none;
+    border-color: #4aa3d8;
+}
+
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="password"]:focus {
+    outline: none;
+    border-color: #4aa3d8;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #6c757d;
+    font-size: 13px;
+}
+
+/* チェックボックス */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.checkbox-label span {
+    font-size: 16px;
+    color: #212529;
+}
+
+/* メッセージ */
+.message {
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: none;
+    font-weight: 600;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ボタン */
+.btn-primary {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #4aa3d8 0%, #7dd3fc 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 163, 216, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .form {
+        max-width: 100%;
+    }
+}
+
+/* カード間の余白 */
+.home-container .card {
+    margin-bottom: 20px;
+}
+
+.card + .card {
+    margin-top: 20px;
+}
+
+/* ========================================
+   ✨ 統合版 追加スタイル
+   ======================================== */
+
+/* ========================================
+   設定ページ - タブナビゲーション
+   ======================================== */
+
+.settings-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.settings-tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 20px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.settings-tab:hover {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.settings-tab.active {
+    background: linear-gradient(135deg, #4aa3d8 0%, #7dd3fc 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(74, 163, 216, 0.3);
+}
+
+.settings-tab .tab-icon {
+    font-size: 20px;
+}
+
+/* タブコンテンツ */
+.settings-content {
+    display: none;
+}
+
+.settings-content.active {
+    display: block;
+}
+
+/* ========================================
+   通知設定スタイル
+   ======================================== */
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.setting-item:hover {
+    background: #f0f1f3;
+}
+
+.setting-item.sub-setting {
+    margin-left: 40px;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+}
+
+.setting-info {
+    flex: 1;
+}
+
+.setting-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.setting-icon {
+    font-size: 24px;
+}
+
+.setting-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+}
+
+.setting-description {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+    margin-top: 5px;
+}
+
+/* トグルスイッチ */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    flex-shrink: 0;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background: linear-gradient(135deg, #4aa3d8 0%, #7dd3fc 100%);
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(26px);
+}
+
+/* 時刻入力 */
+.time-input {
+    padding: 10px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 150px;
+    transition: border-color 0.3s;
+}
+
+.time-input:focus {
+    outline: none;
+    border-color: #4aa3d8;
+}
+
+/* ========================================
+   通知許可セクション
+   ======================================== */
+
+.notification-permission {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.notification-permission p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* セカンダリボタン */
+.btn-secondary {
+    padding: 12px 24px;
+    background: white;
+    color: #4aa3d8;
+    border: 2px solid #4aa3d8;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #4aa3d8;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 163, 216, 0.3);
+}
+
+/* ========================================
+   危険ゾーン
+   ======================================== */
+
+.danger-zone {
+    border: 2px solid #e74c3c;
+    background: #fff5f5;
+}
+
+.btn-danger {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: auto;
+}
+
+.btn-danger:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+/* ========================================
+   レスポンシブ対応（タブレット・スマホ）
+   ======================================== */
+
+@media (max-width: 768px) {
+    .settings-tabs {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .settings-tab {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 12px 16px;
+    }
+    
+    .setting-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .toggle-switch {
+        align-self: flex-end;
+    }
+    
+    .setting-item.sub-setting {
+        margin-left: 0;
+    }
+    
+    .time-input {
+        width: 100%;
+    }
+}

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ヘルプ - WeightTrack</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/help.css">
+    <link rel="manifest" href="/manifest.json">
+    <script src="js/lang/ja.js"></script>
+    <script src="js/lang/en.js"></script>
+    <script src="js/lang/zh.js"></script>
+    <script src="js/lang/ko.js"></script>
+    <script src="js/i18n.js"></script>
+</head>
+<body class="home-body">
+    <!-- ナビゲーションバー -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">WeightTrack</h1>
+            
+            <!-- ハンバーガーメニューボタン -->
+            <button class="hamburger-btn" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ハンバーガーメニュー -->
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="hamburger-overlay" id="hamburgerOverlay"></div>
+        <div class="hamburger-content">
+            <div class="hamburger-header">
+                <h3 data-i18n="nav.menu">メニュー</h3>
+                <button class="hamburger-close" id="hamburgerClose">✕</button>
+            </div>
+            <nav class="hamburger-nav">
+                <a href="home.html" class="hamburger-item">
+                    <span class="hamburger-icon">🏠</span>
+                    <span data-i18n="nav.home">ホーム</span>
+                </a>
+                <a href="record.html" class="hamburger-item">
+                    <span class="hamburger-icon">📝</span>
+                    <span data-i18n="nav.record">体重記録</span>
+                </a>
+                <a href="meal.html" class="hamburger-item">
+                    <span class="hamburger-icon">🍽️</span>
+                    <span data-i18n="nav.meal">食事記録</span>
+                </a>
+                <a href="exercise.html" class="hamburger-item">
+                    <span class="hamburger-icon">🏃</span>
+                    <span data-i18n="nav.exercise">運動記録</span>
+                </a>
+                <a href="health-memo.html" class="hamburger-item">
+                    <span class="hamburger-icon">💭</span>
+                    <span data-i18n="nav.healthMemo">体調メモ</span>
+                </a>
+                <a href="calendar.html" class="hamburger-item">
+                    <span class="hamburger-icon">📅</span>
+                    <span data-i18n="nav.calendar">カレンダー</span>
+                </a>
+                <a href="graph.html" class="hamburger-item">
+                    <span class="hamburger-icon">📊</span>
+                    <span data-i18n="nav.graph">グラフ</span>
+                </a>
+                <a href="goal.html" class="hamburger-item">
+                    <span class="hamburger-icon">🎯</span>
+                    <span data-i18n="nav.goal">目標設定</span>
+                </a>
+                <a href="game.html" class="hamburger-item">
+                    <span class="hamburger-icon">🐣</span>
+                    <span>アバター育成</span>
+                </a>
+                <a href="ai.html" class="hamburger-item">
+                    <span class="hamburger-icon">🤖</span>
+                    <span data-i18n="nav.ai">AI相談</span>
+                </a>
+                
+                <div class="hamburger-divider"></div>
+                
+                <a href="profile.html" class="hamburger-item">
+                    <span class="hamburger-icon">👤</span>
+                    <span data-i18n="nav.profile">プロフィール</span>
+                </a>
+                <a href="settings.html" class="hamburger-item">
+                    <span class="hamburger-icon">⚙️</span>
+                    <span data-i18n="nav.settings">設定</span>
+                </a>
+                <a href="help.html" class="hamburger-item">
+                    <span class="hamburger-icon">❓</span>
+                    <span data-i18n="nav.help">ヘルプ</span>
+                </a>
+                <a href="terms.html" class="hamburger-item">
+                    <span class="hamburger-icon">📄</span>
+                    <span data-i18n="nav.terms">利用規約</span>
+                </a>
+                <a href="language.html" class="hamburger-item">
+                    <span class="hamburger-icon">🌐</span>
+                    <span data-i18n="nav.language">言語変更</span>
+                </a>
+                
+                <div class="hamburger-divider"></div>
+                
+                <a href="#" class="hamburger-item" id="hamburgerLogout">
+                    <span class="hamburger-icon">🚪</span>
+                    <span data-i18n="nav.logout">ログアウト</span>
+                </a>
+                <a href="delete-account.html" class="hamburger-item danger">
+                    <span class="hamburger-icon">🗑️</span>
+                    <span data-i18n="nav.deleteAccount">アカウント削除</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="home-container">
+        <h2 data-i18n="help.title">ヘルプ・よくある質問</h2>
+
+        <!-- 使い方ガイド -->
+        <div class="card">
+            <h3 data-i18n="help.userGuide">📖 使い方ガイド</h3>
+            
+            <div class="guide-section">
+                <h4 data-i18n="help.howToRecord">1. 体重を記録する</h4>
+                <ol>
+                    <li>ホーム画面またはハンバーガーメニューから「体重記録」をクリック</li>
+                    <li>体重と体脂肪率（任意）を入力</li>
+                    <li>メモ（任意）を追加して「記録を保存」をクリック</li>
+                </ol>
+            </div>
+
+            <div class="guide-section">
+                <h4 data-i18n="help.howToMeal">2. 食事を記録する</h4>
+                <ol>
+                    <li>ハンバーガーメニューから「食事記録」をクリック</li>
+                    <li>食事タイプ（朝食/昼食/夕食/間食）を選択</li>
+                    <li>食事名、カロリー、栄養素を入力</li>
+                    <li>写真を追加（任意）して「記録を保存」をクリック</li>
+                </ol>
+            </div>
+
+            <div class="guide-section">
+                <h4 data-i18n="help.howToExercise">3. 運動を記録する</h4>
+                <ol>
+                    <li>ハンバーガーメニューから「運動記録」をクリック</li>
+                    <li>運動タイプを選択</li>
+                    <li>運動時間、消費カロリー、距離を入力</li>
+                    <li>「記録を保存」をクリック</li>
+                </ol>
+            </div>
+
+            <div class="guide-section">
+                <h4 data-i18n="help.howToGoal">4. 目標を設定する</h4>
+                <ol>
+                    <li>ハンバーガーメニューから「目標設定」をクリック</li>
+                    <li>目標体重と期間を設定</li>
+                    <li>「目標を設定」をクリック</li>
+                    <li>ホーム画面で進捗を確認できます</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- よくある質問 -->
+        <div class="card">
+            <h3 data-i18n="help.faq">❓ よくある質問（FAQ）</h3>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q. パスワードを忘れてしまいました</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>申し訳ございませんが、現在パスワードリセット機能は実装されておりません。新しいアカウントを作成していただくか、記憶を頼りに再度お試しください。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q. 記録を間違えて入力してしまいました</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>各記録ページ（体重記録、食事記録、運動記録）には「削除」ボタンがあります。間違えた記録を削除してから、正しい内容で再度記録してください。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q. 通知が届きません</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>以下を確認してください：</p>
+                    <ul>
+                        <li>通知設定ページでブラウザ通知が許可されているか</li>
+                        <li>毎日のリマインダーがONになっているか</li>
+                        <li>ブラウザのタブが開いているか（閉じていると通知されません）</li>
+                        <li>通知時刻が正しく設定されているか</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q. グラフが表示されません</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>グラフを表示するには、体重記録が必要です。まず体重を記録してから、グラフページまたはホーム画面で確認してください。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q. データをエクスポートできますか？</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>申し訳ございませんが、現在データエクスポート機能は実装されておりません。今後のアップデートで対応予定です。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q. アカウントを削除したい</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>ハンバーガーメニューから「アカウント削除」を選択してください。パスワードを入力して確認すると、すべてのデータが削除されます。この操作は取り消せませんのでご注意ください。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q. AI相談は何ができますか？</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>AI相談では、体重管理に関する基本的なアドバイスを受けることができます。ただし、医療行為ではありませんので、健康上の問題については必ず医師にご相談ください。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q. スマートフォンでも使えますか？</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>はい、スマートフォンのブラウザでもご利用いただけます。レスポンシブデザインに対応しているため、画面サイズに合わせて最適な表示になります。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <button class="btn-primary" onclick="location.href='home.html'" data-i18n="common.backToHome">ホームに戻る</button>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/help.js"></script>
+</body>
+</html>

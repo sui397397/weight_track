@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロフィール - WeightTrack</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="manifest" href="/manifest.json">
+    <script src="js/lang/ja.js"></script>
+    <script src="js/lang/en.js"></script>
+    <script src="js/lang/zh.js"></script>
+    <script src="js/lang/ko.js"></script>
+    <script src="js/i18n.js"></script>
+</head>
+<body class="home-body">
+    <!-- ナビゲーションバー -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">WeightTrack</h1>
+            
+            <!-- ハンバーガーメニューボタン -->
+            <button class="hamburger-btn" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ハンバーガーメニュー -->
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="hamburger-overlay" id="hamburgerOverlay"></div>
+        <div class="hamburger-content">
+            <div class="hamburger-header">
+                <h3 data-i18n="nav.menu">メニュー</h3>
+                <button class="hamburger-close" id="hamburgerClose">✕</button>
+            </div>
+            <nav class="hamburger-nav">
+                <a href="home.html" class="hamburger-item">
+                    <span class="hamburger-icon">🏠</span>
+                    <span data-i18n="nav.home">ホーム</span>
+                </a>
+                <a href="record.html" class="hamburger-item">
+                    <span class="hamburger-icon">📝</span>
+                    <span data-i18n="nav.record">体重記録</span>
+                </a>
+                <a href="meal.html" class="hamburger-item">
+                    <span class="hamburger-icon">🍽️</span>
+                    <span data-i18n="nav.meal">食事記録</span>
+                </a>
+                <a href="exercise.html" class="hamburger-item">
+                    <span class="hamburger-icon">🏃</span>
+                    <span data-i18n="nav.exercise">運動記録</span>
+                </a>
+                <a href="health-memo.html" class="hamburger-item">
+                    <span class="hamburger-icon">💭</span>
+                    <span data-i18n="nav.healthMemo">体調メモ</span>
+                </a>
+                <a href="calendar.html" class="hamburger-item">
+                    <span class="hamburger-icon">📅</span>
+                    <span data-i18n="nav.calendar">カレンダー</span>
+                </a>
+                <a href="graph.html" class="hamburger-item">
+                    <span class="hamburger-icon">📊</span>
+                    <span data-i18n="nav.graph">グラフ</span>
+                </a>
+                <a href="goal.html" class="hamburger-item">
+                    <span class="hamburger-icon">🎯</span>
+                    <span data-i18n="nav.goal">目標設定</span>
+                </a>
+                <a href="game.html" class="hamburger-item">
+                    <span class="hamburger-icon">🐣</span>
+                    <span>アバター育成</span>
+                </a>
+                <a href="ai.html" class="hamburger-item">
+                    <span class="hamburger-icon">🤖</span>
+                    <span data-i18n="nav.ai">AI相談</span>
+                </a>
+                
+                <div class="hamburger-divider"></div>
+                
+                <a href="profile.html" class="hamburger-item">
+                    <span class="hamburger-icon">👤</span>
+                    <span data-i18n="nav.profile">プロフィール</span>
+                </a>
+                <a href="settings.html" class="hamburger-item">
+                    <span class="hamburger-icon">⚙️</span>
+                    <span data-i18n="nav.settings">設定</span>
+                </a>
+                <a href="help.html" class="hamburger-item">
+                    <span class="hamburger-icon">❓</span>
+                    <span data-i18n="nav.help">ヘルプ</span>
+                </a>
+                <a href="terms.html" class="hamburger-item">
+                    <span class="hamburger-icon">📄</span>
+                    <span data-i18n="nav.terms">利用規約</span>
+                </a>
+                <a href="language.html" class="hamburger-item">
+                    <span class="hamburger-icon">🌐</span>
+                    <span data-i18n="nav.language">言語変更</span>
+                </a>
+                
+                <div class="hamburger-divider"></div>
+                
+                <a href="#" class="hamburger-item" id="hamburgerLogout">
+                    <span class="hamburger-icon">🚪</span>
+                    <span data-i18n="nav.logout">ログアウト</span>
+                </a>
+                <a href="delete-account.html" class="hamburger-item danger">
+                    <span class="hamburger-icon">🗑️</span>
+                    <span data-i18n="nav.deleteAccount">アカウント削除</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="home-container">
+        <h2 data-i18n="profile.title">プロフィール編集</h2>
+
+        <!-- プロフィール情報 -->
+        <div class="card">
+            <h3 data-i18n="profile.basicInfo">基本情報</h3>
+            <form id="profileForm">
+                <div class="form-group">
+                    <label for="email" data-i18n="profile.email">メールアドレス</label>
+                    <input type="email" id="email" disabled>
+                    <small class="form-hint" data-i18n="profile.emailNote">メールアドレスは変更できません</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="name"><span data-i18n="profile.name">名前</span> *</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender"><span data-i18n="profile.gender">性別</span> *</label>
+                    <select id="gender" required>
+                        <option value="">選択してください</option>
+                        <option value="male" data-i18n="profile.male">男性</option>
+                        <option value="female" data-i18n="profile.female">女性</option>
+                        <option value="other">その他</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="birthDate"><span data-i18n="profile.birthDate">生年月日</span> *</label>
+                    <input type="date" id="birthDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="profile.registeredDate">登録日</label>
+                    <input type="text" id="createdAt" disabled>
+                </div>
+
+                <div class="error-message" id="profile-error"></div>
+                <div class="success-message" id="profile-success"></div>
+
+                <button type="submit" class="btn-primary" data-i18n="profile.updateProfile">プロフィールを更新</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

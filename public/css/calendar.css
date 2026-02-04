@@ -1,0 +1,305 @@
+/* カード間の余白 */
+.card {
+    margin-bottom: 25px;
+}
+
+/* カレンダーコントロール */
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.calendar-controls h3 {
+    margin: 0;
+    color: #355c7d;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* ナビゲーションボタン */
+.btn-nav {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #4aa3d8 0%, #7dd3fc 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 80px;
+}
+
+.btn-nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(74, 163, 216, 0.3);
+}
+
+.btn-nav:active {
+    transform: translateY(0);
+}
+
+/* 矢印アイコンを追加 */
+#prevMonth::before {
+    content: "← ";
+}
+
+#nextMonth::after {
+    content: " →";
+}
+
+/* カレンダーラッパー */
+.calendar-wrapper {
+    width: 100%;
+}
+
+/* カレンダーグリッド */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+/* カレンダーヘッダー（曜日） */
+.calendar-header {
+    background: #f8f9fa;
+    color: #495057;
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 6px;
+    font-size: 13px;
+    border: 1px solid #e9ecef;
+}
+
+/* 日曜日を赤く */
+.calendar-header:first-child {
+    color: #dc3545;
+}
+
+/* 土曜日を青く */
+.calendar-header:last-child {
+    color: #4aa3d8;
+}
+
+/* カレンダーの日付 */
+.calendar-day {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 10px;
+    min-height: 90px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.calendar-day:hover {
+    background: #f8f9fa;
+    border-color: #adb5bd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.calendar-day.other-month {
+    background: #fafafa;
+    color: #adb5bd;
+    cursor: default;
+    border-color: #f1f3f5;
+}
+
+.calendar-day.other-month:hover {
+    background: #fafafa;
+    transform: none;
+    box-shadow: none;
+    border-color: #f1f3f5;
+}
+
+.calendar-day.today {
+    border: 2px solid #4aa3d8;
+    background: #e7f5ff;
+}
+
+.calendar-day.selected {
+    background: #4aa3d8;
+    color: white;
+    border-color: #4aa3d8;
+}
+
+.calendar-day.selected .day-number {
+    color: white;
+}
+
+/* 日付番号 */
+.day-number {
+    font-size: 15px;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 8px;
+}
+
+/* 日曜日の日付を赤く */
+.calendar-grid .calendar-day:nth-child(7n+1) .day-number {
+    color: #dc3545;
+}
+
+/* 土曜日の日付を青く */
+.calendar-grid .calendar-day:nth-child(7n) .day-number {
+    color: #4aa3d8;
+}
+
+/* インジケーター（記録マーク） */
+.day-indicators {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    justify-content: center;
+    min-height: 24px;
+}
+
+.indicator {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.indicator.weight {
+    background: linear-gradient(135deg, #4aa3d8 0%, #7dd3fc 100%);
+}
+
+.indicator.weight::before {
+    content: "📊";
+    font-size: 13px;
+}
+
+.indicator.meal {
+    background: linear-gradient(135deg, #fd7e14 0%, #ff922b 100%);
+}
+
+.indicator.meal::before {
+    content: "🍽";
+    font-size: 13px;
+}
+
+.indicator.exercise {
+    background: linear-gradient(135deg, #198754 0%, #20c997 100%);
+}
+
+.indicator.exercise::before {
+    content: "💪";
+    font-size: 13px;
+}
+
+/* 選択された日のインジケーターは白抜きに */
+.calendar-day.selected .indicator {
+    background: white;
+    border: 2px solid white;
+}
+
+.calendar-day.selected .indicator.weight {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: white;
+}
+
+.calendar-day.selected .indicator.meal {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: white;
+}
+
+.calendar-day.selected .indicator.exercise {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: white;
+}
+
+/* 月間サマリー */
+.month-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.summary-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    text-align: center;
+}
+
+.summary-item span {
+    display: block;
+    font-size: 13px;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+.summary-item strong {
+    font-size: 24px;
+    color: #212529;
+}
+
+/* 選択日の詳細 */
+#dayDetail {
+    margin-top: 20px;
+}
+
+#dayDetail h3 {
+    font-size: 18px;
+    color: #212529;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+#dayDetail h4 {
+    font-size: 15px;
+    color: #495057;
+    margin: 15px 0 10px 0;
+    font-weight: 600;
+}
+
+.detail-item {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border-left: 3px solid #4aa3d8;
+}
+
+.detail-item strong {
+    color: #212529;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .calendar-grid {
+        gap: 4px;
+    }
+    
+    .calendar-day {
+        min-height: 70px;
+        padding: 6px;
+    }
+    
+    .day-number {
+        font-size: 13px;
+    }
+    
+    .calendar-header {
+        font-size: 11px;
+        padding: 8px 4px;
+    }
+    
+    .month-summary {
+        grid-template-columns: 1fr;
+    }
+}

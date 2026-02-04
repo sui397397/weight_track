@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アバター育成 - WeightTrack</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body class="home-body">
+    <!-- ナビゲーションバー -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">WeightTrack</h1>
+
+            <!-- ハンバーガーメニューボタン -->
+            <button class="hamburger-btn" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ハンバーガーメニュー -->
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="hamburger-overlay" id="hamburgerOverlay"></div>
+        <div class="hamburger-content">
+            <div class="hamburger-header">
+                <h3>メニュー</h3>
+                <button class="hamburger-close" id="hamburgerClose">✕</button>
+            </div>
+            <nav class="hamburger-nav">
+                <a href="home.html" class="hamburger-item">
+                    <span class="hamburger-icon">🏠</span>
+                    <span>ホーム</span>
+                </a>
+                <a href="record.html" class="hamburger-item">
+                    <span class="hamburger-icon">📝</span>
+                    <span>体重記録</span>
+                </a>
+                <a href="meal.html" class="hamburger-item">
+                    <span class="hamburger-icon">🍽️</span>
+                    <span>食事記録</span>
+                </a>
+                <a href="exercise.html" class="hamburger-item">
+                    <span class="hamburger-icon">🏃</span>
+                    <span>運動記録</span>
+                </a>
+                <a href="calendar.html" class="hamburger-item">
+                    <span class="hamburger-icon">📅</span>
+                    <span>カレンダー</span>
+                </a>
+                <a href="graph.html" class="hamburger-item">
+                    <span class="hamburger-icon">📊</span>
+                    <span>グラフ</span>
+                </a>
+                <a href="goal.html" class="hamburger-item">
+                    <span class="hamburger-icon">🎯</span>
+                    <span>目標設定</span>
+                </a>
+                <a href="game.html" class="hamburger-item">
+                    <span class="hamburger-icon">🐣</span>
+                    <span>アバター育成</span>
+                </a>
+                <a href="ai.html" class="hamburger-item">
+                    <span class="hamburger-icon">🤖</span>
+                    <span>AI相談</span>
+                </a>
+                
+                <div class="hamburger-divider"></div>
+                
+                <a href="profile.html" class="hamburger-item">
+                    <span class="hamburger-icon">👤</span>
+                    <span>プロフィール</span>
+                </a>
+                <a href="settings.html" class="hamburger-item">
+                    <span class="hamburger-icon">⚙️</span>
+                    <span>設定</span>
+                </a>
+                <a href="help.html" class="hamburger-item">
+                    <span class="hamburger-icon">❓</span>
+                    <span>ヘルプ</span>
+                </a>
+                <a href="terms.html" class="hamburger-item">
+                    <span class="hamburger-icon">📄</span>
+                    <span>利用規約</span>
+                </a>
+                <a href="language.html" class="hamburger-item">
+                    <span class="hamburger-icon">🌐</span>
+                    <span>言語変更</span>
+                </a>
+                
+                <div class="hamburger-divider"></div>
+                
+                <a href="#" class="hamburger-item" id="hamburgerLogout">
+                    <span class="hamburger-icon">🚪</span>
+                    <span>ログアウト</span>
+                </a>
+                <a href="delete-account.html" class="hamburger-item danger">
+                    <span class="hamburger-icon">🗑️</span>
+                    <span>アカウント削除</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="home-container">
+        <div class="welcome-section">
+            <h2>🐣 アバター育成</h2>
+            <p>記録を続けて、レベルアップしよう！</p>
+        </div>
+
+        <!-- プレイヤー情報 -->
+        <div class="card player-card">
+            <div class="player-info">
+                <div class="player-avatar" id="playerAvatar">🐣</div>
+                <div class="player-stats">
+                    <h3><span id="playerName">プレイヤー</span></h3>
+                    <div class="level-info">
+                        <span class="level-badge">Lv.<span id="playerLevel">1</span></span>
+                        <span class="points-badge">⭐ <span id="totalPoints">0</span>pt</span>
+                    </div>
+                    <div class="exp-bar">
+                        <div class="exp-fill" id="expFill" style="width: 0%"></div>
+                    </div>
+                    <div class="exp-text"><span id="currentExp">0</span> / <span id="requiredExp">100</span> EXP</div>
+                </div>
+            </div>
+            <div class="streak-info">
+                <div class="streak-item">
+                    <span class="streak-icon">🔥</span>
+                    <div>
+                        <div class="streak-label">現在の連続記録</div>
+                        <div class="streak-value"><span id="currentStreak">0</span>日</div>
+                    </div>
+                </div>
+                <div class="streak-item">
+                    <span class="streak-icon">🏆</span>
+                    <div>
+                        <div class="streak-label">最長連続記録</div>
+                        <div class="streak-value"><span id="longestStreak">0</span>日</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- バッジコレクション -->
+        <div class="card">
+            <h3>🏅 バッジコレクション</h3>
+            <div class="badge-summary">
+                <span id="badgeCount">0</span> / <span id="badgeTotal">0</span> 獲得
+            </div>
+            <div class="badge-grid" id="badgeGrid">
+                <!-- バッジがここに表示されます -->
+            </div>
+        </div>
+
+        <!-- レベル報酬 -->
+        <div class="card">
+            <h3>🎁 レベル報酬</h3>
+            <div class="rewards-info">
+                <p>レベルアップするごとに特別な報酬がもらえます！</p>
+                <div class="reward-list">
+                    <div class="reward-item">
+                        <span class="reward-level">Lv.5</span>
+                        <span class="reward-icon">🐥</span>
+                        <span class="reward-name">アバター進化</span>
+                    </div>
+                    <div class="reward-item">
+                        <span class="reward-level">Lv.10</span>
+                        <span class="reward-icon">🐓</span>
+                        <span class="reward-name">アバター進化</span>
+                    </div>
+                    <div class="reward-item">
+                        <span class="reward-level">Lv.15</span>
+                        <span class="reward-icon">🦅</span>
+                        <span class="reward-name">最終進化</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 週間ランキング -->
+        <div class="card">
+            <h3>🏆 ランキング</h3>
+            <div class="ranking-tabs">
+                <button class="ranking-tab active" id="weeklyTab">週間</button>
+                <button class="ranking-tab" id="monthlyTab">月間</button>
+            </div>
+            <div class="ranking-info">
+                <p id="rankingDescription">今週のポイント獲得ランキング</p>
+                <div id="myRankDisplay" class="my-rank">
+                    <!-- 自分の順位がここに表示されます -->
+                </div>
+                <div class="ranking-list" id="rankingList">
+                    <!-- ランキングがここに表示されます -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

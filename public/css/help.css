@@ -1,0 +1,255 @@
+/* ヘルプページCSS */
+
+/* ヘルプ検索 */
+.help-search {
+    margin-bottom: 30px;
+}
+
+.help-search input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+.help-search input:focus {
+    outline: none;
+    border-color: #4aa3d8;
+    box-shadow: 0 0 0 3px rgba(74, 163, 216, 0.1);
+}
+
+/* ヘルプカテゴリ */
+.help-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.help-category {
+    padding: 20px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.help-category:hover {
+    border-color: #4aa3d8;
+    background: #f8f9fa;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(74, 163, 216, 0.15);
+}
+
+.help-category-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.help-category-name {
+    color: #355c7d;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* ガイドセクション */
+.guide-section {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.guide-section:last-child {
+    margin-bottom: 0;
+}
+
+.guide-section h4 {
+    color: #4aa3d8;
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.guide-section ol {
+    margin: 0 0 0 20px;
+    color: #355c7d;
+    line-height: 1.8;
+}
+
+.guide-section ol li {
+    margin-bottom: 8px;
+}
+
+/* FAQアイテム */
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.faq-item:last-child {
+    margin-bottom: 0;
+}
+
+.faq-question {
+    padding: 15px;
+    background: #f8f9fa;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: #355c7d;
+    transition: background 0.3s;
+}
+
+.faq-question:hover {
+    background: #e8f4f8;
+}
+
+.faq-icon {
+    color: #4aa3d8;
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    background: white;
+}
+
+.faq-item.active .faq-answer {
+    padding: 15px;
+    max-height: 500px;
+}
+
+.faq-answer p {
+    margin: 0 0 10px 0;
+    color: #666;
+    line-height: 1.8;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+.faq-answer ul {
+    margin: 10px 0 0 20px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.faq-answer ul li {
+    margin-bottom: 5px;
+}
+
+/* コンタクトボックス */
+.contact-box {
+    background: linear-gradient(135deg, #4aa3d8 0%, #7dd3fc 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.contact-box h4 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contact-box p {
+    color: white;
+    opacity: 0.95;
+    margin-bottom: 15px;
+}
+
+.contact-box .btn-secondary {
+    background: white;
+    color: #4aa3d8;
+    border: none;
+}
+
+.contact-box .btn-secondary:hover {
+    background: #f8f9fa;
+}
+
+/* ボタン */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #4aa3d8 0%, #7dd3fc 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(74, 163, 216, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 14px;
+    background: white;
+    color: #4aa3d8;
+    border: 2px solid #4aa3d8;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #e8f4f8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(74, 163, 216, 0.2);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+/* カード間のスペース */
+.card {
+    margin-bottom: 25px;
+}
+
+.card + .card {
+    margin-top: 20px;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .help-categories {
+        grid-template-columns: 1fr;
+    }
+    
+    .help-search input {
+        font-size: 16px; /* iOSのズーム防止 */
+    }
+}

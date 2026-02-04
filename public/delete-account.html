@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アカウント削除 - WeightTrack</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/delete-account.css">
+    <link rel="manifest" href="/manifest.json">
+    <script src="js/lang/ja.js"></script>
+    <script src="js/lang/en.js"></script>
+    <script src="js/lang/zh.js"></script>
+    <script src="js/lang/ko.js"></script>
+    <script src="js/i18n.js"></script>
+</head>
+<body class="home-body">
+    <!-- ナビゲーションバー -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">WeightTrack</h1>
+            
+            <!-- ハンバーガーメニューボタン -->
+            <button class="hamburger-btn" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ハンバーガーメニュー -->
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="hamburger-overlay" id="hamburgerOverlay"></div>
+        <div class="hamburger-content">
+            <div class="hamburger-header">
+                <h3 data-i18n="nav.menu">メニュー</h3>
+                <button class="hamburger-close" id="hamburgerClose">✕</button>
+            </div>
+            <nav class="hamburger-nav">
+                <a href="home.html" class="hamburger-item">
+                    <span class="hamburger-icon">🏠</span>
+                    <span data-i18n="nav.home">ホーム</span>
+                </a>
+                <a href="record.html" class="hamburger-item">
+                    <span class="hamburger-icon">📝</span>
+                    <span data-i18n="nav.record">体重記録</span>
+                </a>
+                <a href="meal.html" class="hamburger-item">
+                    <span class="hamburger-icon">🍽️</span>
+                    <span data-i18n="nav.meal">食事記録</span>
+                </a>
+                <a href="exercise.html" class="hamburger-item">
+                    <span class="hamburger-icon">🏃</span>
+                    <span data-i18n="nav.exercise">運動記録</span>
+                </a>
+                <a href="health-memo.html" class="hamburger-item">
+                    <span class="hamburger-icon">💭</span>
+                    <span data-i18n="nav.healthMemo">体調メモ</span>
+                </a>
+                <a href="calendar.html" class="hamburger-item">
+                    <span class="hamburger-icon">📅</span>
+                    <span data-i18n="nav.calendar">カレンダー</span>
+                </a>
+                <a href="graph.html" class="hamburger-item">
+                    <span class="hamburger-icon">📊</span>
+                    <span data-i18n="nav.graph">グラフ</span>
+                </a>
+                <a href="goal.html" class="hamburger-item">
+                    <span class="hamburger-icon">🎯</span>
+                    <span data-i18n="nav.goal">目標設定</span>
+                </a>
+                <a href="game.html" class="hamburger-item">
+                    <span class="hamburger-icon">🐣</span>
+                    <span>アバター育成</span>
+                </a>
+                <a href="ai.html" class="hamburger-item">
+                    <span class="hamburger-icon">🤖</span>
+                    <span data-i18n="nav.ai">AI相談</span>
+                </a>
+                
+                <div class="hamburger-divider"></div>
+                
+                <a href="profile.html" class="hamburger-item">
+                    <span class="hamburger-icon">👤</span>
+                    <span data-i18n="nav.profile">プロフィール</span>
+                </a>
+                <a href="settings.html" class="hamburger-item">
+                    <span class="hamburger-icon">⚙️</span>
+                    <span data-i18n="nav.settings">設定</span>
+                </a>
+                <a href="help.html" class="hamburger-item">
+                    <span class="hamburger-icon">❓</span>
+                    <span data-i18n="nav.help">ヘルプ</span>
+                </a>
+                <a href="terms.html" class="hamburger-item">
+                    <span class="hamburger-icon">📄</span>
+                    <span data-i18n="nav.terms">利用規約</span>
+                </a>
+                <a href="language.html" class="hamburger-item">
+                    <span class="hamburger-icon">🌐</span>
+                    <span data-i18n="nav.language">言語変更</span>
+                </a>
+                
+                <div class="hamburger-divider"></div>
+                
+                <a href="#" class="hamburger-item" id="hamburgerLogout">
+                    <span class="hamburger-icon">🚪</span>
+                    <span data-i18n="nav.logout">ログアウト</span>
+                </a>
+                <a href="delete-account.html" class="hamburger-item danger">
+                    <span class="hamburger-icon">🗑️</span>
+                    <span data-i18n="nav.deleteAccount">アカウント削除</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="home-container">
+        <h2 data-i18n="deleteAccount.title">アカウント削除</h2>
+
+        <!-- 警告 -->
+        <div class="warning-box">
+            <h3 data-i18n="deleteAccount.warning">⚠️ 警告</h3>
+            <p data-i18n="deleteAccount.warningText">アカウントを削除すると、以下のデータがすべて削除されます：</p>
+            <ul>
+                <li>プロフィール情報</li>
+                <li>体重記録</li>
+                <li>食事記録（写真を含む）</li>
+                <li>運動記録</li>
+                <li>目標設定</li>
+                <li>AI相談履歴</li>
+                <li>通知設定</li>
+            </ul>
+            <p class="warning-text" data-i18n="deleteAccount.cannotUndo">この操作は取り消すことができません。</p>
+        </div>
+
+        <!-- 削除フォーム -->
+        <div class="card">
+            <h3 data-i18n="deleteAccount.confirmation">アカウント削除の確認</h3>
+            <p class="description" data-i18n="deleteAccount.enterPassword">アカウントを削除するには、パスワードを入力してください。</p>
+            
+            <form id="deleteForm">
+                <div class="form-group">
+                    <label for="password"><span data-i18n="profile.currentPassword">パスワード</span> *</label>
+                    <input type="password" id="password" placeholder="パスワードを入力" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="confirmDelete" required>
+                        <span data-i18n="deleteAccount.confirmCheckbox">すべてのデータが削除されることを理解しました</span>
+                    </label>
+                </div>
+
+                <div class="error-message" id="error-message"></div>
+
+                <button type="submit" class="btn-danger" data-i18n="deleteAccount.deleteButton">アカウントを削除する</button>
+                <button type="button" class="btn-secondary" onclick="location.href='home.html'" data-i18n="common.cancel">キャンセル</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/delete-account.js"></script>
+</body>
+</html>
